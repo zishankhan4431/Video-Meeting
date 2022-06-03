@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Or Join Meeting</title>
+    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.cdnfonts.com/css/bukhari-script" rel="stylesheet">
+    <link rel="stylesheet" href="public/Assets/css/style.css">
+
+</head>
+
+<body style="padding-top: 3.5rem;">
+    <nav class="navbar navbar-expand-md fixed-top">
+        <!-- <img src="public/assets/images/google-meet-icon.png" class="logo" alt=""> -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///8AAACOjo6zs7OdnZ319fVaWlqgoKCFhYXj4+Pm5ubd3d3t7e36+vo+Pj7q6urExMRwcHDOzs58fHy8vLzW1taurq5fX19SUlKXl5dLS0sgICBERES4uLjKysotLS0UFBQ0NDR4eHgnJycZGRloaGgMDAynp6chISE5OTmBgYFNX2GlAAAIcElEQVR4nO2cbV/iMAzAnYCowCEK+AQKInp33/8DntzSbHRN2o6040X+78ZvNE23tnnqLi4URVEURVEURVEURVEURVEURVEURVEURVEURVEURVEURVEURVEURVEURVEURVHOnMnobT2/n3bYg5vF/WiQqvHJclWUvA+TCeE78FLK/7ocpWh/WdTppxDBM6zLf7yRbn7wUhzzPpYWwTN9tzogPMbjTdFAfBQ5Rk35H5LtTz6bAooi42S8ccmXVPHRJaD4JSjBw6uzA2ux9u+c7RfFUkyCh2uiA2JvkT3JESkBHsaU/GshAfeUgGIuJMHDM9kBIQF/SQGPQhI8/E49xM6FVHQMeaa0/AcZCbSAIouJSi10P7yICGCGsEhiH9r0aPm/RQTcMhouRCR4WNLyNyICBl0/Q0bDdxkJjIYTGQk8b7T8JxkJT6SATxkBHsgNvyguZSQMSQFSNoUH0qYq3mQE0GOYZRpyQywlYUa0LzQLvJBr3XNqCdl8YOIhbuQkfKcdQT+/nB24F5Tw4Wh/Jti+D+dbNBQV8dBofy/avg9HoEg63GcbFrnDiRM7knInLmJQf4z7DuLed9taB66TWFOD5eyw977PlpljpYb7h1LJ/bKTmHsmJoMstrCinBXjH85yXk/G4+n41Dk56cMC/fnyLGkhncxouIc4/+vD7QntWJHgjyxBGT/jy6+jfrU3j5uh7tUZPMjpvtGtto7+pNHSYa/tejNyBvhbDvylqy2xuEE7pltnn7btWqNi+bI+SxRkiqiVK04HZzKFn5rMyS61SmQ6EucGoRBeLEz6opUrx8Xyv6U7HwIz5DEzp3KLnEupIWsZBsDk+GrLn8ev6/0YCk/GRqAj3WLpghhckSIE7pkccrncMtEvbwcV6TBs0cGCuuB6Y7KI2/9XdBTX5AlX5SX33mdKydSwS7KOgIXGPJMe1QgGReFdZjXMGCs9QBdLHIDkwh+4JKsL8LWEQpymAVhjk16rOu6SJeCrvAdjqn+oVnC/gVAvk1wuMltvXJIWI7doEPz1NrMpr7n8vXDdnA/amjkA8w6jnXQJiimQNdsdnbY7kEExhN0qzLqBXiMdkkDPBGwWqprsaBiy8MV1BDZnLF9kCgpxz7kqrxlDsMi6JfIbF2zxmHbgzGb8U3nJGm65Kr4OMMUYBa55uNxy/vCVddPK3eTRMOSAykGXwLTDa84YwT0fHjRdE3gAJ2L/Mg3XZslw188CYLItrGs3+L6vrH85QeNoy952AmAhM9UmBZpsz9Y1Af7NfvIucEd0p6AFAA353RBMNpxRfMwTDTVIP7LGErpQqTUkYmJAec/AuqZAQw3qNt0VCgYzTVJreMXdAyYm7myeJR4Ntdfy2nkIADH1Qqk1ZO+B1QCtE1+EZWc1zoUOcKlJrCFvH0+tjvtMLbReIT7HGoSmBDmxhqxptSu7UC23HgWrZcv2SFyYnSexhuyuDCYbLiBel8dekvitKI+GrEUDJhve4z9Ggx7TyLp2AYspfVjgRMo59Ye7BUw0rCfyV4ng3tO3rl1kSSiy9j/E1dAYC8jRYMUxTDI2BJTl3BM7UcCFwxBTQE6lGrGBde0gSwKDqfLGuYTR65BSMAxMvll/dpDFRWQDYnAPXoeEcfvWA+JC32TYThJuswCTDadS0IlI9JhgL+UiCK+ptKrDGR2wN+ByGBanxr8HeFA5Cm04uxv2BtyQwxL66DHBAHEbbo4aTMcZawPMkspMCcumoMcUEPrOUX3CiIe9AU3LwLMD6DHBgRhuP8pwhpTbrmC5R3chNMCJHpM/9E3mseTgsu1wC8aLQw+44MTzh74zRIUZJxxeymoMQttcmz/4Q99Xw76L4Tr6uND47tvdlH98MV4cfHrA9ib50DfBLmqK3nCWEwkMI4bPws1kjAiA78CHvikiDpzwUXuKDfwbfwivw8QXA0wEPvRNEnzui62JoIEhRCMswsLCiRcU+qYJPErOp7howCJBQzri5HplI4SEvhnCUoyM0cICJhs6QzEzH+28kNA3A5lQr9P2EYI7bzu0YaCtDmYRH/qmCZoZ9DcpeMC7Qwc5ypVDfwu6yNkVLCHC2Jg9A9jEuCzGBRywGTuiHEnIi9NWQ/g7RuLiyl9QKhiebV/ThBrCI4v1nAy4QxlDqOV6l1BDaBp9u8hvgFShCxgZNuDVhYY9+9+xZcLokBhbr53dkUxDExet8lKxtj4u4TvzS6upmEpDXDexn9FBseo1xYzjiC8Cy6jhKwZPKucxvhp06+jlnC1jzaXhqhZYqLye+HO766rF+s+LdY+mOVdbaTjjZCzqm0KVNmpzdL7Kbwc7es10dCsNg0MjtShgmzLCmkEc6pY0QypJNaxes5af/Ko5FFdh9kJeDeuZzXZ19fXK468goy+nhtP6qtf28wpHdsxjwI6aT8PxUWq6/VGz4/jM09zX31wavh2nUk75Kl3jgyb76yZ9zOZLazj4doib2Z7caUnM5jdbXJi3RFhD/hQJKnji6R2+LNDQS6Ehf8bCcPqnqvjaTmCVQsN+ozUHEudZxyHGaAoN+TMW/9kI5S/nbIHigY6eoeDpsvWWF7VMoSFfdPnj1MseEFw8MPXypqxGeC3lfO69/FeiLi5u588zlxO8wwiJ9H5451wCHi/js5NSZPYtOkA1dKManhOqoRvV8JxQDd2ohueEauhGNTwnVEM3quE50SwsCvlXo6QsQ2l1a+y+7vx/cYRkz+DzkyT2CxdUiNUoZEndy1OwOxtWtGtVIwUVNHbG8UMMDEhbYfWuvx/KM6h/Kmflv7/kKP9zJh+6JRlU9R8RH5KqEpWbzgKF4fTKAuPHqGdxW+Y8t2e8FdYZLxaj+Ml0sxh19LV+RVEURVEURVEURVEUJQf/AP0xYdD2RCc3AAAAAElFTkSuQmCC"
+            class="logo" alt="">
+        <a href="#" class="navbar-brand text-dark">TRMZ</a>
+        <div class="collapse navbar-collapse">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">At a glance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">How it works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Plan and Price</a>
+                </li>
+            </ul> -->
+            <ul class="navbar-nav mr-0">
+                <!-- <li class="nav-item sign-in display-center">
+                    <a href="#" class="nav-link">Sign in</a>
+                </li> -->
+                <li class="nav-item">
+                    <button class="btn btn-outline-primary font-weight-bold join-meeting">Join the meeting</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-success font-weight-bold new-meeting">Start a meeting</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="divmain">
+        <!-- <div class="jumbotron h-100 d-flex">
+             <div class="container w-50">
+               
+                <img src="/public/Assets/images/conference.svg" alt="" class="signin-image">
+            </div>
+            <div class="container w-50">
+                <h1 style="font-size: 3rem;"> Premium video meeting. Now it is available for free to everyone. </h1>
+                <p style="font-size: 20px;">
+                    We're redesigning the Google Meet service for secure business meetings and making it free for everyone to use.
+                </p>
+                <ul class="display-center justify-content-start" >
+                    <li style="padding: 0;">
+                        <button class="btn btn-lg text-light font-weight-bold display-center new-meeting" style="background-color: #01796b;"><span class="material-icons mr-2">video_call</span>New Meeting</button>
+                    </li>
+                    <li class="pl-3">
+                        <button class="btn btn-lg btn-outline-secondary text-dark font-weight-bold display-center" style="background-color: #ffffff;"><span class="material-icons mr-2">keyboard</span><input type="text" placeholder="Enter a code" style="border: none;" class="enter-code"></button>
+                    </li>
+                    <li class="text-dark font-weight-bold cursor-pointer pl-2 join-action">Join</li>
+                </ul>
+            </div>
+           
+        </div> -->
+        <div class="container my-4 p-4">
+            <div class="row">
+                <div class="col-12 col-md-7" style="width: 100%; height: 100%;">
+                    <div class="mr-4" style="height: 100%;">
+                        <img style="width: 100%;" src="/public/Assets/images/conference.svg" alt="">
+                        <!-- <img style="width: 100%;height: 100%;" src="https://images.unsplash.com/photo-1612831820363-9b92f70109a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWVldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt=""> -->
+                    </div>
+                </div>
+                <div class="content col-12 col-md-5">
+                    <!-- <h1 style="font-size: 2rem;"> Premium video meeting. Now it is available for free to everyone. </h1> -->
+                    <div class=" ml-4">
+                        <h1> TRMZ video meeting is available for free to everyone. </h1>
+                        <p style="font-size: 18px;">
+                            We're redesigning the video conferencing services for secure business meetings and making it free for everyone to use.
+                        </p>
+                        <ul class="display-center justify-content-start d-flex" style="flex-wrap: wrap;gap: 10px;">
+                            <li style="padding: 0;">
+                                <button class="btn btn-outline-primary font-weight-bold display-center new-meeting"><span class="material-icons mr-2">video_call</span>New Meeting</button>
+                            </li>
+                            <li class="">
+                                <button class="btn btn-lg btn-outline-secondary text-dark font-weight-bold display-center" style="background-color: #ffffff;">
+                                    <span class="material-icons mr-2">keyboard</span>
+                                    <input type="text" placeholder="Enter a code" style="border: none;" class="enter-code">
+                                </button>
+                            </li>
+                            <li class="text-dark font-weight-bold cursor-pointer pl-2 join-action">Join</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- <footer class="container"><h6>Learn more about <span class="learn-more text-info">TRMZ</span> .</h6></footer> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $(document).on("click", ".join-meeting", function() {
+                $(".enter-code").focus();
+            })
+            $(document).on("click", ".join-action", function() {
+                var join_value = $('.enter-code').val();
+                var meetingUrl = window.location.origin + "?meetingID=" + join_value;
+                window.location.replace(meetingUrl);
+            })
+            $(document).on("click", ".new-meeting", function() {
+                var eight_d_value = Math.floor(Math.random() * 100000000);
+                var meetingUrl = window.location.origin + "?meetingID=" + eight_d_value;
+                window.location.replace(meetingUrl);
+            })
+
+        })
+    </script>
+</body>
+
+</html>
